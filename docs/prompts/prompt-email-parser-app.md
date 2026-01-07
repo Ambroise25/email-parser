@@ -8,33 +8,66 @@ Copiez ce texte dans une nouvelle app Replit pour démarrer :
 
 Je veux créer une application Email Parser pour le projet Email2Extranet.
 
-### Philosophie de travail (IMPORTANT)
+### Philosophie "Two to Tango" (OBLIGATOIRE)
 
-1. **Baby steps** : On avance par petites étapes. Une fonctionnalité à la fois.
-2. **Documentation d'abord** : Avant de coder, on documente ce qu'on va faire.
-3. **Demander permission** : Avant toute action externe (push GitHub, API, etc.), demande-moi.
-4. **Itératif** : On teste, on valide, puis on passe à l'étape suivante.
+Ce projet suit la méthode "Two to Tango" avec 3 principes fondamentaux :
 
-### Première étape uniquement
+#### 1. Baby Steps
+- On avance par petites étapes. Une fonctionnalité à la fois.
+- On livre petit, on teste, on valide, puis on continue.
+- Pas de perfection, juste de la valeur incrémentale.
+
+#### 2. Documentation = Source de Vérité
+- Si ce n'est pas écrit, ça n'existe pas.
+- Avant de coder, on documente ce qu'on va faire.
+- Crée un fichier `replit.md` qui servira de mémoire du projet.
+
+#### 3. Validation Continue
+- Demande-moi permission avant toute action externe (push GitHub, API calls, etc.)
+- Propose ce que tu vas faire AVANT de le faire.
+- On teste chaque étape avant de passer à la suivante.
+
+### Structure du projet
+
+```
+email-parser/
+├── replit.md              # Mémoire du projet (à créer en premier)
+├── docs/
+│   └── decisions.md       # Décisions techniques actées
+├── main.py                # Point d'entrée
+├── imap_client.py         # Connexion IMAP
+└── llm_parser.py          # Parser LLM (plus tard)
+```
+
+### Première étape UNIQUEMENT
 
 Pour commencer, je veux UNIQUEMENT :
-- Me connecter à une boîte mail via IMAP
-- Lire UN email non lu
-- Afficher son contenu brut (pas de parsing pour l'instant)
+1. Créer le fichier `replit.md` avec la description du projet et cette philosophie
+2. Me connecter à une boîte mail via IMAP
+3. Lire UN email non lu
+4. Afficher son contenu brut (pas de parsing pour l'instant)
 
 ### Variables d'environnement
 
 - `IMAP_HOST` : Serveur IMAP (ex: imap.gmail.com)
 - `IMAP_USER` : Adresse email
-- `IMAP_PASSWORD` : Mot de passe
+- `IMAP_PASSWORD` : Mot de passe ou App Password
 
-### Contexte du projet
+### Contexte métier
 
 Cette app fait partie du projet Email2Extranet :
 - Extraction automatique des demandes d'intervention depuis les emails de syndics
-- Parser LLM (Mistral) pour extraire les données
-- Métier unique : Etanchéité
+- Parser LLM (Mistral via OpenRouter) - mais PAS pour cette première étape
+- Métier unique : Etanchéité (toujours)
+- Utilise l'intégration Replit OpenRouter quand on arrivera au parsing LLM
 
-Ne code pas tout d'un coup. Propose-moi d'abord ce que tu vas faire, attends ma validation.
+### Ce que tu dois faire maintenant
+
+1. PROPOSE-MOI un plan pour cette première étape
+2. ATTENDS ma validation
+3. Crée d'abord le `replit.md`
+4. Puis code la connexion IMAP minimale
+
+**Ne code pas tout d'un coup. Étape par étape.**
 
 ---
